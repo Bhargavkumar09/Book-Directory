@@ -1,0 +1,29 @@
+@host=http://localhost:5000/api/user
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmhhcmdhdiIsImVtYWlsIjoiQmhhcmdhdkBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njg4NDg4NiwiZXhwIjoxNjU2ODk1Njg2fQ.-Pp_mPg16D5xOYr1FofRAu2ReCEjXN9dBnB_HV06SRo
+
+GET {{host}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{host}}/62c20fa4f2afa600681676fa
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+DELETE  {{host}}/62c20fa4f2afa600681676fa
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+PUT {{host}}/62c20fa4f2afa600681676fa
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name" : "Vishal",
+  "email": "Vishal@mail.com",
+  "password": "Vishal@123"
+}

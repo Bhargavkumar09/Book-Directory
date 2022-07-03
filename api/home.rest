@@ -1,0 +1,15 @@
+@host=http://localhost:5000/api/home
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQmhhcmdhdiIsImVtYWlsIjoiQmhhcmdhdkBtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Njg4NDg4NiwiZXhwIjoxNjU2ODk1Njg2fQ.-Pp_mPg16D5xOYr1FofRAu2ReCEjXN9dBnB_HV06SRo
+
+GET {{host}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+POST {{host}}/upload
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "hardikbook"
+}

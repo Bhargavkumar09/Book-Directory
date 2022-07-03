@@ -14,12 +14,15 @@ userSchema.methods.generateAuthToken = function () {
   const payload = {
     name: this.name,
     email: this.email,
+    isAdmin: this.isAdmin,
   };
   const token = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
     expiresIn: process.env.EXPIRES_IN,
   });
   return token;
 };
+
+const User = mongoose.model("user", userSchema);
 
 function validateUser(user) {
   return Joi.object({
@@ -32,8 +35,6 @@ function validateUser(user) {
       .required(),
   }).validate(user);
 }
-
-const User = mongoose.model("user", userSchema);
 
 // exports.validateUser = validateUser;
 // exports.User = User;
