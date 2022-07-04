@@ -17,7 +17,7 @@ const bookSchema = new mongoose.Schema({
 
 const Book = mongoose.model("book", bookSchema);
 
-function bookValidate() {
+function bookValidate(book) {
   const schema = Joi.object({
     name: Joi.string().required(),
     languages: Joi.string().required(),
@@ -26,8 +26,10 @@ function bookValidate() {
     pdfURL: Joi.string().required(),
     publisher: Joi.string().required(),
     publicationDate: Joi.date().required().default(Date.now),
-    uploadBy: Joi.string().required(),
+    uploadBy: Joi.string(),
   });
+  schema.validate(book);
 }
 
 module.exports = Book;
+module.exports= bookValidate;
